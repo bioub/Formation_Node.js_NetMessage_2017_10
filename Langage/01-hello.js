@@ -1,3 +1,5 @@
+//@ts-check
+
 // usejsdoc.org
 /**
  * Additionne 2 paramètres
