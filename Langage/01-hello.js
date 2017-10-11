@@ -1,6 +1,6 @@
 //@ts-check
 
-// usejsdoc.org
+// Documentation sur usejsdoc.org
 /**
  * Additionne 2 paramètres
  * @param {number} a Le 1er nombre

@@ -34,4 +34,4 @@ setTimeoutSync(function() {
 }, 200);
 
 
-console.log('after forEach');
+console.log('after callback sync');

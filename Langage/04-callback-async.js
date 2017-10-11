@@ -17,4 +17,4 @@ forEachAsync([1, 2, 3], function(nb) {
   console.log(nb);
 });
 
-console.log('after setTimeout');
+console.log('after callback async');

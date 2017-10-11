@@ -55,6 +55,7 @@ const jouer = function() {
     }
 
     // fin de partie
+    console.log('Gagné');
     rl.close();
   });
 };
