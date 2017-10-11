@@ -33,5 +33,13 @@ setTimeoutSync(function() {
   console.log('200ms');
 }, 200);
 
+// [3, 4, 5]
+// 0 + 3 = 3;
+// 3 + 4 = 7;
+// 7 + 5 = 12;
+const sum = nbs.reduce(function(acc, nb) {
+  return acc + nb;
+}, 0);
+console.log(sum);
 
 console.log('after callback sync');
