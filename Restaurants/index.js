@@ -5,10 +5,6 @@ const mongoose = require('mongoose');
 const app = require('./app');
 const config = require('./config');
 
-const mongoUri = `mongodb://${config.mongo.host}/${config.mongo.db}`;
-mongoose.connect(mongoUri, {
-  useMongoClient: true,
-});
 
 const server = http.createServer(app);
 // const serverHttp2 = http2.createServer(app);

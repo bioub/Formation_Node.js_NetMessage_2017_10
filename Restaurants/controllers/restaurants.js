@@ -28,15 +28,15 @@ const showRestaurant = async (req, res, next) => {
 
 const deleteRestaurant = (req, res, next) => {
   Restaurant.findByIdAndRemove(req.params.id)
-  .then(restaurant => {
-    if (!restaurant) {
-      req.errorMsg = 'Restaurant not found';
-      return next();
-    }
+    .then(restaurant => {
+      if (!restaurant) {
+        req.errorMsg = 'Restaurant not found';
+        return next();
+      }
 
-    res.json(restaurant);
-  })
-  .catch(next);
+      res.json(restaurant);
+    })
+    .catch(next);
 };
 
 const addRestaurant = async(req, res, next) => {
