@@ -3,7 +3,7 @@ const fs = require('fs');
 const ws = fs.createWriteStream(__dirname + '/out.txt');
 
 ws.write('Coucou');
-process.stdout.write('Coucou');
+process.stdout.write('Coucou\n');
 
 const rs = fs.createReadStream(__dirname + '/package.json');
 

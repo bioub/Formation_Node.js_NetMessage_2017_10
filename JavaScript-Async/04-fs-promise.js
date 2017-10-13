@@ -18,6 +18,7 @@ const log = (filePath, msg) => {
 const dirPath = path.join(__dirname,  'logs');
 const filePath = path.resolve(dirPath, 'app.log');
 
+// Sinon utiliser fs-extra
 const statPromise = util.promisify(fs.stat); // Node 8
 const mkdirPromise = util.promisify(fs.mkdir);
 
@@ -28,6 +29,7 @@ statPromise(dirPath)
     if (err && err.code === 'ENOENT') {
       return mkdirPromise(dirPath);
     }
+    return Promise.reject(err);
   })
   .then(() => log(filePath, 'Ligne 1'))
   .then(() => log(filePath, 'Ligne 2'))

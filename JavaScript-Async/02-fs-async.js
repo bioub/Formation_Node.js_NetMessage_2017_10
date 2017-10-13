@@ -9,7 +9,9 @@ const log = (filePath, msg, cb) => {
 const dirPath = path.join(__dirname,  'logs');
 const filePath = path.resolve(dirPath, 'app.log');
 
-fs.stat(dirPath, (err) => {
+console.time('thread idle');
+console.time('end');
+fs.stat(dirPath, (err, stat) => {
   const next = () => {
     log(filePath, 'Ligne 1', (err) => {
       if (err) {
@@ -32,6 +34,7 @@ fs.stat(dirPath, (err) => {
                 return console.log(err.message);
               }
               console.log('Logs done');
+              console.timeEnd('end');
             });
           });
         });
@@ -41,8 +44,9 @@ fs.stat(dirPath, (err) => {
 
   if (err && err.code === 'ENOENT') {
     return fs.mkdir(dirPath, () => {
-      next()
+      next();
     });
   }
   next();
 });
+console.timeEnd('thread idle');

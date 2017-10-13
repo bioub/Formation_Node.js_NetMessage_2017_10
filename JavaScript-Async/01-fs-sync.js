@@ -16,7 +16,7 @@ try {
 }
 catch (err) {
   if (err.code === 'ENOENT') {
-    fs.mkdirSync(dirPath)
+    fs.mkdirSync(dirPath);
   }
 }
 
